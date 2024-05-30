@@ -16,7 +16,8 @@ public class main {
         return categorys;
     }
 
-    public static int menuOption(String[] categorys) {
+    public static String menuOption(String[] categorys) {
+
         System.out.println("Olá, seja bem-vindo(a) a TecShop!\n");
         for (int i = 0; i < 5; i++) {
             System.out.println((i + 1) + " - " + categorys[i]);
@@ -35,11 +36,18 @@ public class main {
         // Converte o menuOpion para int
         int menuOptionToInt = Integer.parseInt(menuOption);
 
-        return menuOptionToInt;
+        String returnOption = " ";
+        for (int i = 0; i < 5; i++) {
+            if (i == (menuOptionToInt - 1)) {
+                returnOption = categorys[i];
+            }
+        }
+        return returnOption;
     }
 
     public static void main(String[] args) {
         String[] categorys = categorys();
-        int menuOption = menuOption(categorys);
+        String menuOption = menuOption(categorys);
+        System.out.println(menuOption);
     }
 }
