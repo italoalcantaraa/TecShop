@@ -26,6 +26,7 @@ public class main {
         System.out.println("Selecione uma opção: ");
         String menuOption = input.next();
 
+        //Verifa se contém somente números e também se a opção existe 
         while (((menuOption.matches("^\\d+$")) == false) || menuOption.intern() != "1" && menuOption.intern() != "2" && menuOption.intern() != "3" && menuOption.intern() != "4" && menuOption.intern() != "5") {
             System.err.println("Valor inválido!");
             System.err.println("Informe uma opção novamente: ");
