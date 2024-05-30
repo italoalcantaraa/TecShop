@@ -1,1 +1,24 @@
 Anotações *_*
+
+Grupo 1:
+@Italo Alcântara & @Gabriel.
+Apresentação do site.
+Menu principal e carrinho.
+
+Grupo 2:
+@ghostofdigo & @𝕸𝖗.𝕷𝖔𝖚𝖎𝖘
+Coleta de dados do user.
+Formas de pagamento.
+
+Grupo 3:
+@𝕸𝖗.𝕷𝖔𝖚𝖎𝖘 & @Aln_fire & @bb_lindaoo
+Criar os produtos de acordo com cada categoria.
+Paginação do site.
+
+Categorias
+Processamento(CPU e Memoria RAM)
+Armazenamento(HDD e SSD)
+Alimentação(Fontes)
+Placas de Video
+Periféricos(Mouse, Teclado, Caixa de som, Monitor,
+Pendrive).
