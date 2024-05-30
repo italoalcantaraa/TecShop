@@ -45,6 +45,10 @@ public class main {
         return returnOption;
     }
 
+    public static void cart(){
+        
+    }
+
     public static void main(String[] args) {
         String[] categorys = categorys();
         String menuOption = menuOption(categorys);
