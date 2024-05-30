@@ -1,4 +1,4 @@
-package vscode.src.pages; 
+package components; 
 
 import java.util.Scanner;
 
