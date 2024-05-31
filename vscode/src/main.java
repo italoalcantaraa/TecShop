@@ -11,7 +11,7 @@ public class main {
         categorys[1] = "Armazenamento(HDD e SSD)";
         categorys[2] = "Alimentação(Fontes)";
         categorys[3] = "Placas de Vídeo";
-        categorys[4] = "Periféricos(Mouse, Teclado, Caixa de som, Monitor Pendrive)";
+        categorys[4] = "Periféricos(Mouse, Teclado, Caixa de som, Monitor Pendrivealisson)";
 
         return categorys;
     }
