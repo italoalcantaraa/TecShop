@@ -105,7 +105,17 @@ public class main {
         
     }
 
-    public static String[] products(int menuOpion){
+    public static double[] productsPrice(int menuOpion){
+        double[] peripheralsPrice = new double[]{129.99,899.99,429.99,94.99, 299.99, 154.99, 129.99, 134.99, 129.99, 79.99};
+        double[] videoCardPrice = new double[]{690.00,399.60, 749.99, 1949.99, 849.99, 1350.00, 2779.00, 2499.99, 1449.99, 3199.99};
+        double[] alimentationPrice = new double[]{269.99, 279.99,299.99, 239.99,269.99,249.99,239.99,489.99,399.99,659.99};
+        double[] storagePrice = new double[]{ 156.90, 395.99,319.99,99.00,174.99,178.42,239.99,199.99,224.10,179.99};
+        double[] processingPrice = new double[]{159.99, 159.99, 159.99,159.99,159.99,159.99,159.99,159.99,129.99,300.00,569.99,229.99,529.99,594.99,1798.99,1149.99,2348.99};
+        
+        return processingPrice;
+    }
+
+    public static String[] products(int menuOption){
         String[] peripherals = new String[]{
             
             "MOUSE GAMER AOC GM510, RGB, 16000 DPI, 6 BOTOES ",
@@ -162,20 +172,15 @@ public class main {
                             "Processador Intel Core i7-12700, Cache 25MB, 2.1GHz (4.9GHz Max Turbo)",
                             "PROCESSADOR Intel Core i7-10700F, 2.9GHZ (4.8GHZ Turbo), Cache 16MB, 8-CORE, 16-Threads,",
                             "Processador Intel Core i9-12900KF, 3.2GHz (5.2GHz Max Turbo), Cache 30MB, 16 Núcleos, 24 Threads"};
-        
-        double[] peripheralsPrice = new double[]{129.99,899.99,429.99,94.99, 299.99, 154.99, 129.99, 134.99, 129.99, 79.99};
-        double[] videoCardPrice = new double[]{690.00,399.60, 749.99, 1949.99, 849.99, 1350.00, 2779.00, 2499.99, 1449.99, 3199.99};
-        double[] alimentationPrice = new double[]{269.99, 279.99,299.99, 239.99,269.99,249.99,239.99,489.99,399.99,659.99};
-        double[] storagePrice = new double[]{ 156.90, 395.99,319.99,99.00,174.99,178.42,239.99,199.99,224.10,179.99};
-        double[] processingPrice = new double[]{159.99, 159.99, 159.99,159.99,159.99,159.99,159.99,159.99,129.99,300.00,569.99,229.99,529.99,594.99,1798.99,1149.99,2348.99};
-            
+                    
         return peripherals;
-    
+        
     }
 
     public static void main(String[] args) {
         String[] categorys = categorys();
         int menuOption = menuOption(categorys);
         products(menuOption);
+        productsPrice(menuOption);
     }
 }
