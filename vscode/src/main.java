@@ -356,14 +356,14 @@ public class main {
     public static void showProducts(String[] products, double[] productsPrice) {
         System.out.println("\n-PRODUTOS-\n");
         for (int i = 0; i < products.length; i++) {
-            System.out.println("\n" + products[i]);
+            System.out.println( "\n" + (i + 1) + " - " + products[i]);
             System.out.println("Preço: " + productsPrice[i]);
         }
     }
 
     public static int selectOption(String[] products, double[] productsPrice) {
 
-        System.out.println("Selecione um produto: ");
+        System.out.println("\nSelecione um produto: ");
         String selectProduct = input.next();
 
         // Verifica se há somente números e se a posição existe
