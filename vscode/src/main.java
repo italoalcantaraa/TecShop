@@ -38,6 +38,7 @@ public class main {
 
         return menuOptionToInt;
     }
+
     public static String[] billInformation() {
         String[] data = new String[6];
         Scanner input = new Scanner(System.in);
@@ -61,102 +62,108 @@ public class main {
             System.out.printf("Insira seu CPF novamente: ");
             data[1] = input.nextLine();
         }
-        
+
         System.out.printf("\nInforme seu logradouro(Nome da rua e N°): ");
         data[2] = input.nextLine();
-        
-        while(data[2].matches("^[A-Z][a-zA-Z ]+ N°\\d{1,4}$") == false){
+
+        while (data[2].matches("^[A-Z][a-zA-Z ]+ N°\\d{1,4}$") == false) {
             System.err.printf("=-=-=-LOGRADOURO INVÁLIDO-=-=-=\n");
             System.out.printf("Insira seu Logradouro novamente: ");
             data[2] = input.nextLine();
         }
-        
+
         System.out.printf("\nInforme o nome de seu bairro: ");
         data[3] = input.nextLine();
-        
-        while(data[3].matches("^[A-Z][a-zA-Z]{3,}( [a-zA-Z]+)*$") == false){
+
+        while (data[3].matches("^[A-Z][a-zA-Z]{3,}( [a-zA-Z]+)*$") == false) {
             System.err.printf("=-=-=-BAIRRO INVÁLIDO-=-=-=\n");
             System.out.printf("Insira seu bairro novamente: ");
             data[3] = input.nextLine();
         }
-        
+
         System.out.printf("\nInforme seu CEP(xxxxx-xxx): ");
         data[4] = input.nextLine();
-        
-        while(data[4].matches("^\\d{5}-\\d{3}$") == false){
+
+        while (data[4].matches("^\\d{5}-\\d{3}$") == false) {
             System.err.printf("=-=-=-CEP INVÁLIDO-=-=-=\n");
             System.out.printf("Insira seu CEP novamente: ");
             data[4] = input.nextLine();
         }
-        
+
         System.out.printf("\nInforme sua cidade(Sao Paulo-SP): ");
         data[5] = input.nextLine();
-        
-        while(data[5].matches("^[A-Z][a-zA-Z ]+-[A-Z]{2}") == false){
+
+        while (data[5].matches("^[A-Z][a-zA-Z ]+-[A-Z]{2}") == false) {
             System.err.printf("=-=-=-CIDADE INVÁLIDA-=-=-=\n");
             System.out.printf("Insira sua cidade novamente: ");
             data[5] = input.nextLine();
         }
-        
+
         return data;
     }
 
-    public static void cart(){
-        
+    public static void cart() {
+
     }
 
-    public static double[] productsPrice(int menuOption){
-        double[] peripheralsPrice = new double[]{129.99,899.99,429.99,94.99, 299.99, 154.99, 129.99, 134.99, 129.99, 79.99};
-        double[] videoCardPrice = new double[]{690.00,399.60, 749.99, 1949.99, 849.99, 1350.00, 2779.00, 2499.99, 1449.99, 3199.99};
-        double[] alimentationPrice = new double[]{269.99, 279.99,299.99, 239.99,269.99,249.99,239.99,489.99,399.99,659.99};
-        double[] storagePrice = new double[]{ 156.90, 395.99,319.99,99.00,174.99,178.42,239.99,199.99,224.10,179.99};
-        double[] processingPrice = new double[]{159.99, 159.99, 159.99,159.99,159.99,159.99,159.99,159.99,129.99,300.00,569.99,229.99,529.99,594.99,1798.99,1149.99,2348.99};
+    public static double[] productsPrice(int menuOption) {
+        double[] peripheralsPrice = new double[] { 129.99, 899.99, 429.99, 94.99, 299.99, 154.99, 129.99, 134.99,
+                129.99, 79.99 };
+        double[] videoCardPrice = new double[] { 690.00, 399.60, 749.99, 1949.99, 849.99, 1350.00, 2779.00, 2499.99,
+                1449.99, 3199.99 };
+        double[] alimentationPrice = new double[] { 269.99, 279.99, 299.99, 239.99, 269.99, 249.99, 239.99, 489.99,
+                399.99, 659.99 };
+        double[] storagePrice = new double[] { 156.90, 395.99, 319.99, 99.00, 174.99, 178.42, 239.99, 199.99, 224.10,
+                179.99 };
+        double[] processingPrice = new double[] { 159.99, 159.99, 159.99, 159.99, 159.99, 159.99, 159.99, 159.99,
+                129.99, 300.00, 569.99, 229.99, 529.99, 594.99, 1798.99, 1149.99, 2348.99 };
 
-        double[] productsPrice = new double[]{};
+        double[] productsPrice = new double[] {};
 
-    switch (menuOption) {
-        case 1:
-            productsPrice = new double[peripheralsPrice.length];
-            productsPrice = peripheralsPrice;
-            break;
+        switch (menuOption) {
+            case 1:
+                productsPrice = new double[peripheralsPrice.length];
+                productsPrice = peripheralsPrice;
+                break;
 
             case 2:
-            productsPrice = new double[videoCardPrice.length];
-            productsPrice = videoCardPrice;
-            break;
+                productsPrice = new double[videoCardPrice.length];
+                productsPrice = videoCardPrice;
+                break;
             case 3:
-            productsPrice = new double[alimentationPrice.length];
-            productsPrice = alimentationPrice ;
-            break;
+                productsPrice = new double[alimentationPrice.length];
+                productsPrice = alimentationPrice;
+                break;
             case 4:
-            productsPrice = new double[storagePrice.length];
-            productsPrice = storagePrice;
-            break;
+                productsPrice = new double[storagePrice.length];
+                productsPrice = storagePrice;
+                break;
             case 5:
-            productsPrice  = new double[processingPrice.length];
-            productsPrice = processingPrice;
-            break;
-        default: System.out.println("Erro");
-            break;
-    }
-        
-    return productsPrice;
+                productsPrice = new double[processingPrice.length];
+                productsPrice = processingPrice;
+                break;
+            default:
+                System.out.println("Erro");
+                break;
+        }
+
+        return productsPrice;
     }
 
-    public static String[] products(int menuOption){
-        String[] peripherals = new String[]{
-            
-            "MOUSE GAMER AOC GM510, RGB, 16000 DPI, 6 BOTOES ",
-            "MOUSE GAMER RAZER BASILISK V3, RGB, 26000DPI, 11 BOTOES, PRETO",
-            "MOUSE GAMER HYPERX PULSEFIRE HASTE, WIRELESS, RGB, 16000DPI, 6 BOTOES, PRETO ",
-            "TECLADO PHILIPS SPK6308, ABNT2, WIRELESS, PRETO ",
-            "TECLADO MECANICO REDRAGON VILI ",
-            "TECLADO MECANICO MARVO KG901C ",
-            "CAIXA DE SOM LOGITECH S150 ",
-            "HEADSET MARVO HG9086, 7.1 SURROUND, DRIVERS 40MM ",
-            "WEBCAM LOGITECH C270 HD 720P ",
-            "MOUSEPAD RAZER GOLIATHUS COSMIC SPEED MEDIO"};
-        String[] videoCard = new String[]{
+    public static String[] products(int menuOption) {
+        String[] peripherals = new String[] {
+
+                "MOUSE GAMER AOC GM510, RGB, 16000 DPI, 6 BOTOES ",
+                "MOUSE GAMER RAZER BASILISK V3, RGB, 26000DPI, 11 BOTOES, PRETO",
+                "MOUSE GAMER HYPERX PULSEFIRE HASTE, WIRELESS, RGB, 16000DPI, 6 BOTOES, PRETO ",
+                "TECLADO PHILIPS SPK6308, ABNT2, WIRELESS, PRETO ",
+                "TECLADO MECANICO REDRAGON VILI ",
+                "TECLADO MECANICO MARVO KG901C ",
+                "CAIXA DE SOM LOGITECH S150 ",
+                "HEADSET MARVO HG9086, 7.1 SURROUND, DRIVERS 40MM ",
+                "WEBCAM LOGITECH C270 HD 720P ",
+                "MOUSEPAD RAZER GOLIATHUS COSMIC SPEED MEDIO" };
+        String[] videoCard = new String[] {
                 "Placa De Vídeo BRX, AMD RX 580, 8GB, GDDR 5, 256Bit",
                 "Placa de Vídeo Afox AMD Radeon RX 550, 4GB GDDR5, 128 Bits",
                 "Placa de Vídeo GTX 1650 D6 Ventus XS OCV3 MSI NVIDIA GeForce, 4GB GDDR6",
@@ -166,83 +173,116 @@ public class main {
                 "Placa de Vídeo RTX 4060 Ti Eagle OC Gigabyte NVIDIA GeForce, 8 GB GDDR6, DLSS, Ray Tracing",
                 "Placa de Vídeo RTX 4060 TI XLR8 Gaming Verto Epic-x PNY NVIDIA GeForce, 8GB GDDR6, ARGB, DLSS, Ray Tracing, G-Sync ",
                 "Placa de Vídeo RTX 3050 ASUS O6G Dual NVIDIA GeForce, 6GB GDDR6, DLSS, Ray Tracing, G-Sync",
-                "Placa de Vídeo RTX 4060 TI Rog-Strix O8G Gaming NVIDIA GeForce, 8GB GDDR6, ARGB, DLSS, Ray Tracing, G-Sync - ROG-STRIX-RTX4060TI-O8G-GAMING"};
-        String[] alimentation = new String[]{
-                    "Fonte MSI MAG A650BN, 650W",
-                    "Fonte Cooler Master MWE Bronze V2 Full Range, 550W", 
-                    "Fonte Corsair CV550, 550W",
-                    "Fonte Gigabyte GP-P450B, 450W",
-                    "Fonte MSI MAG A550BN, 550W",
-                    "Fonte Gamemax GS600, 600W",
-                    "Fonte MSI MAG A500DN, 500W",
-                    "Fonte XPG Kyber, 850W",
-                    "Fonte Corsair CV650, 650W",
-                    "Fonte MSI MAG A850GL, 850W"};
-        String[] storage = new String[]{
-                        "Disco Rígido HD Western Digital, 500GB",
-                        "HD Seagate 2TB BarraCuda, 3.5', SATA",
-                        "HD WD Blue 1TB, 3.5', SATA",
-                        "Hd Sata Seagate 250gb",
-                        "SSD 240 GB Kingston A400, SATA",
-                        "SSD Kingston A400 240GB, SATA",
-                        "SSD 480 GB Kingston A400, SATA",
-                        "SSD Kingston NV2 250 GB, M.2 2280 PCIe",
-                        "SSD Kingston A400 240GB 2.5 polegadas, Sata Iii",
-                        "SSD 256 GB XPG S41 TUF, M.2 PCIe NVME, HEATSINK"};
-        String[] processing = new String[]{
-                            "Memória Kingston Fury Beast, 8GB, 3200MHz, DDR4",
-                            "Memória XPG Gammix D35, 8GB, 3200MHz, DDR4",
-                            "Memória Kingston Fury Beast, RGB, 16GB, 3200MHz, DDR4",
-                            "Memória Kingston Fury Beast, 32GB (2x16GB), 2666MHz, DDR4",
-                            "Memória Rise Mode Z, 16GB, 3200MHz, DDR4",
-                            "Processador Intel Core i3-10105, 3.7GHz (4.4GHz Max Turbo), Cache 6MB, Quad Core, 8 Threads",
-                            "Processador Intel Core i5-10400F, 2.9GHz (4.3GHz Max Turbo), Cache 12MB, 6 Núcleos, 12 Threads",
-                            "Processador Intel Core i7-12700, Cache 25MB, 2.1GHz (4.9GHz Max Turbo)",
-                            "PROCESSADOR Intel Core i7-10700F, 2.9GHZ (4.8GHZ Turbo), Cache 16MB, 8-CORE, 16-Threads,",
-                            "Processador Intel Core i9-12900KF, 3.2GHz (5.2GHz Max Turbo), Cache 30MB, 16 Núcleos, 24 Threads"};
-        
-        String[] products = new String[]{};
-        
-        switch (menuOption){
+                "Placa de Vídeo RTX 4060 TI Rog-Strix O8G Gaming NVIDIA GeForce, 8GB GDDR6, ARGB, DLSS, Ray Tracing, G-Sync - ROG-STRIX-RTX4060TI-O8G-GAMING" };
+        String[] alimentation = new String[] {
+                "Fonte MSI MAG A650BN, 650W",
+                "Fonte Cooler Master MWE Bronze V2 Full Range, 550W",
+                "Fonte Corsair CV550, 550W",
+                "Fonte Gigabyte GP-P450B, 450W",
+                "Fonte MSI MAG A550BN, 550W",
+                "Fonte Gamemax GS600, 600W",
+                "Fonte MSI MAG A500DN, 500W",
+                "Fonte XPG Kyber, 850W",
+                "Fonte Corsair CV650, 650W",
+                "Fonte MSI MAG A850GL, 850W" };
+        String[] storage = new String[] {
+                "Disco Rígido HD Western Digital, 500GB",
+                "HD Seagate 2TB BarraCuda, 3.5', SATA",
+                "HD WD Blue 1TB, 3.5', SATA",
+                "Hd Sata Seagate 250gb",
+                "SSD 240 GB Kingston A400, SATA",
+                "SSD Kingston A400 240GB, SATA",
+                "SSD 480 GB Kingston A400, SATA",
+                "SSD Kingston NV2 250 GB, M.2 2280 PCIe",
+                "SSD Kingston A400 240GB 2.5 polegadas, Sata Iii",
+                "SSD 256 GB XPG S41 TUF, M.2 PCIe NVME, HEATSINK" };
+        String[] processing = new String[] {
+                "Memória Kingston Fury Beast, 8GB, 3200MHz, DDR4",
+                "Memória XPG Gammix D35, 8GB, 3200MHz, DDR4",
+                "Memória Kingston Fury Beast, RGB, 16GB, 3200MHz, DDR4",
+                "Memória Kingston Fury Beast, 32GB (2x16GB), 2666MHz, DDR4",
+                "Memória Rise Mode Z, 16GB, 3200MHz, DDR4",
+                "Processador Intel Core i3-10105, 3.7GHz (4.4GHz Max Turbo), Cache 6MB, Quad Core, 8 Threads",
+                "Processador Intel Core i5-10400F, 2.9GHz (4.3GHz Max Turbo), Cache 12MB, 6 Núcleos, 12 Threads",
+                "Processador Intel Core i7-12700, Cache 25MB, 2.1GHz (4.9GHz Max Turbo)",
+                "PROCESSADOR Intel Core i7-10700F, 2.9GHZ (4.8GHZ Turbo), Cache 16MB, 8-CORE, 16-Threads,",
+                "Processador Intel Core i9-12900KF, 3.2GHz (5.2GHz Max Turbo), Cache 30MB, 16 Núcleos, 24 Threads" };
+
+        String[] products = new String[] {};
+
+        switch (menuOption) {
             case 1:
-            products = new String[peripherals.length];
-            products = peripherals;
-            break;
+                products = new String[peripherals.length];
+                products = peripherals;
+                break;
             case 2:
-            products = new String[videoCard.length];
-            products = videoCard;
-            break;
+                products = new String[videoCard.length];
+                products = videoCard;
+                break;
             case 3:
-            products = new String[alimentation.length];
-            products = alimentation;
+                products = new String[alimentation.length];
+                products = alimentation;
             case 4:
-            products = new String[storage.length];
-            products = storage;
-            break;
+                products = new String[storage.length];
+                products = storage;
+                break;
             case 5:
-            products = new String[processing.length];
-            products = processing;
-            break;
-            default: System.out.println("Erro");
+                products = new String[processing.length];
+                products = processing;
+                break;
+            default:
+                System.out.println("Erro");
         }
 
-        return products;    
+        return products;
     }
 
-    
-    public static void showProducts(String[] products, double[] productsPrice){
-       System.out.println("\n-PRODUTOS-\n");
-        for(int i = 0; i < products.length; i ++){
+    public static void showProducts(String[] products, double[] productsPrice) {
+        System.out.println("\n-PRODUTOS-\n");
+        for (int i = 0; i < products.length; i++) {
             System.out.println("\n" + products[i]);
             System.out.println("Preço: " + productsPrice[i]);
+        }
     }
-}
+
+    public static void selectOption(String[] products, double[] productsPrice) {
+
+        Scanner input = new Scanner(System.in);
+
+        System.out.println("Selecione um produto: ");
+        String selectProduct = input.next();
+
+        //Válida caso a opção seja existente
+        boolean validationOption = true;
+
+        //Verifica se há somente números
+        while (((selectProduct.matches("^\\d+$")) == false) || validationOption == false) {
+            System.err.println("Valor inválido!");
+            System.err.println("Informe uma opção novamente: ");
+            selectProduct = input.next();
+            
+            //Verifica se a opção existe
+            for (int i = 0; i < products.length; i++) {
+                //Converte a opção que o user selecionou para int
+                int selectProductToint = Integer.parseInt(selectProduct);
+
+                if (selectProductToint == i)
+                    validationOption = true;
+                else {
+                    validationOption = false;
+                }
+
+            }
+        }
+
+    }
 
     public static void main(String[] args) {
         String[] categorys = categorys();
-        int menuOption = menuOption(categorys); 
+        int menuOption = menuOption(categorys);
         String[] products = products(menuOption);
         double[] productsPrice = productsPrice(menuOption);
         showProducts(products, productsPrice);
+        selectOption(products, productsPrice);
     }
 }
