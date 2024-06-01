@@ -57,11 +57,12 @@ public class main {
             data[0] = input.nextLine();
         }
 
-        System.out.printf("Data de nascimento. Lembrando que não é permitido compras para menores de 18 anos.\nInforme mm/dd/yyyy\n");
+        System.out.printf(
+                "Data de nascimento. Lembrando que não é permitido compras para menores de 18 anos.\nInforme mm/dd/yyyy\n");
         System.out.printf("Mês: ");
         short mesNascimento = coletaNum.ColetaNumero();
-        
-        while(mesNascimento < 1 || mesNascimento > 12){
+
+        while (mesNascimento < 1 || mesNascimento > 12) {
             System.err.printf("Mês informado é inválido!");
             System.out.printf("Informe o mês novamente: ");
             mesNascimento = coletaNum.ColetaNumero();
@@ -70,92 +71,80 @@ public class main {
         System.out.printf("Informe o dia: ");
         short diaNascimento = coletaNum.ColetaNumero();
 
-        while(diaNascimento < 1 || diaNascimento > 31){
+        while (diaNascimento < 1 || diaNascimento > 31) {
 
             System.err.printf("Dia inválido!");
             System.out.printf("Informe o dia novamente: ");
             diaNascimento = coletaNum.ColetaNumero();
 
-            if(mesNascimento == 1 && diaNascimento > 31){
+            if (mesNascimento == 1 && diaNascimento > 31) {
                 System.out.printf("Dia inválido. Janeiro só possui 31 dias!");
                 System.out.printf("Informe o dia novamente: ");
                 diaNascimento = coletaNum.ColetaNumero();
-            }
-            else if(mesNascimento == 2 && diaNascimento > 29){
+            } else if (mesNascimento == 2 && diaNascimento > 29) {
                 System.out.printf("Dia inválido. Fevereiro só possui 28 dias. Ou 29 quando o ano é bissexto");
                 System.out.printf("Informe o dia novamente: ");
                 diaNascimento = coletaNum.ColetaNumero();
-            }
-            else if(mesNascimento == 3 && diaNascimento > 31){
+            } else if (mesNascimento == 3 && diaNascimento > 31) {
                 System.out.printf("Dia inválido. Março só possui 31 dias!");
                 System.out.printf("Informe o dia novamente: ");
                 diaNascimento = coletaNum.ColetaNumero();
-            }            
-            else if(mesNascimento == 4 && diaNascimento > 30){
+            } else if (mesNascimento == 4 && diaNascimento > 30) {
                 System.out.printf("Dia inválido. Abril só possui 30 dias!");
                 System.out.printf("Informe o dia novamente: ");
                 diaNascimento = coletaNum.ColetaNumero();
-            }            
-            else if(mesNascimento == 5 && diaNascimento > 31){
+            } else if (mesNascimento == 5 && diaNascimento > 31) {
                 System.out.printf("Dia inválido. Maio só possui 31 dias!");
                 System.out.printf("Informe o dia novamente: ");
                 diaNascimento = coletaNum.ColetaNumero();
-            }            
-            else if(mesNascimento == 6 && diaNascimento > 30){
+            } else if (mesNascimento == 6 && diaNascimento > 30) {
                 System.out.printf("Dia inválido. Junho só possui 30 dias!");
                 System.out.printf("Informe o dia novamente: ");
                 diaNascimento = coletaNum.ColetaNumero();
-            }            
-            else if(mesNascimento == 7 && diaNascimento > 31){
+            } else if (mesNascimento == 7 && diaNascimento > 31) {
                 System.out.printf("Dia inválido. Julho só possui 31 dias!");
                 System.out.printf("Informe o dia novamente: ");
                 diaNascimento = coletaNum.ColetaNumero();
-            }            
-            else if(mesNascimento == 8 && diaNascimento > 31){
+            } else if (mesNascimento == 8 && diaNascimento > 31) {
                 System.out.printf("Dia inválido. Agosto só possui 31 dias!");
                 System.out.printf("Informe o dia novamente: ");
                 diaNascimento = coletaNum.ColetaNumero();
-            }            
-            else if(mesNascimento == 9 && diaNascimento > 30){
+            } else if (mesNascimento == 9 && diaNascimento > 30) {
                 System.out.printf("Dia inválido. Setembro só possui 30 dias!");
                 System.out.printf("Informe o dia novamente: ");
                 diaNascimento = coletaNum.ColetaNumero();
-            }            
-            else if(mesNascimento == 10 && diaNascimento > 31){
+            } else if (mesNascimento == 10 && diaNascimento > 31) {
                 System.out.printf("Dia inválido. Outubro só possui 31 dias!");
                 System.out.printf("Informe o dia novamente: ");
                 diaNascimento = coletaNum.ColetaNumero();
-            }            
-            else if(mesNascimento == 11 && diaNascimento > 30){
+            } else if (mesNascimento == 11 && diaNascimento > 30) {
                 System.out.printf("Dia inválido. Novembro só possui 30 dias!");
                 System.out.printf("Informe o dia novamente: ");
                 diaNascimento = coletaNum.ColetaNumero();
-            }            
-            else if(mesNascimento == 12 && diaNascimento > 31){
+            } else if (mesNascimento == 12 && diaNascimento > 31) {
                 System.out.printf("Dia inválido. Dezembro só possui 31 dias!");
                 System.out.printf("Informe o dia novamente: ");
                 diaNascimento = coletaNum.ColetaNumero();
-            }            
+            }
         }
 
         System.out.printf("Informe o ano: ");
         short anoNascimento = coletaNum.ColetaNumero();
 
-        while(anoNascimento > 2006 || anoNascimento < 1914){
+        while (anoNascimento > 2006 || anoNascimento < 1914) {
 
-            if(anoNascimento > 2006){
+            if (anoNascimento > 2006) {
                 System.err.printf("Ano inválido. Você é menor de idade!");
                 System.out.printf("Informe o ano novamente: ");
                 anoNascimento = coletaNum.ColetaNumero();
-            }
-            else if(anoNascimento < 1914){
+            } else if (anoNascimento < 1914) {
                 System.err.printf("Ano inválido. Você possui mais de 110 anos de idade.");
                 System.out.printf("Informe o ano novamente: ");
                 anoNascimento = coletaNum.ColetaNumero();
             }
         }
 
-        LocalDate dataNascimento = LocalDate.of(anoNascimento, mesNascimento, diaNascimento); 
+        LocalDate dataNascimento = LocalDate.of(anoNascimento, mesNascimento, diaNascimento);
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
         String teste = dataNascimento.format(formatter);
         System.out.println(teste);
@@ -231,28 +220,28 @@ public class main {
 
         switch (menuOption) {
             case 1:
-                productsPrice = new double[peripheralsPrice.length];
-                productsPrice = peripheralsPrice;
+                productsPrice = new double[processingPrice.length];
+                productsPrice = processingPrice;
                 break;
 
             case 2:
-                productsPrice = new double[videoCardPrice.length];
-                productsPrice = videoCardPrice;
+                productsPrice = new double[storagePrice.length];
+                productsPrice = storagePrice;
                 break;
             case 3:
                 productsPrice = new double[alimentationPrice.length];
                 productsPrice = alimentationPrice;
                 break;
             case 4:
-                productsPrice = new double[storagePrice.length];
-                productsPrice = storagePrice;
+                productsPrice = new double[videoCardPrice.length];
+                productsPrice = videoCardPrice;
                 break;
             case 5:
-                productsPrice = new double[processingPrice.length];
-                productsPrice = processingPrice;
+                productsPrice = new double[peripheralsPrice.length];
+                productsPrice = peripheralsPrice;
                 break;
             default:
-                System.out.println("Erro");
+                System.err.println("Error");
                 break;
         }
 
@@ -261,7 +250,6 @@ public class main {
 
     public static String[] products(int menuOption) {
         String[] peripherals = new String[] {
-
                 "MOUSE GAMER AOC GM510, RGB, 16000 DPI, 6 BOTOES ",
                 "MOUSE GAMER RAZER BASILISK V3, RGB, 26000DPI, 11 BOTOES, PRETO",
                 "MOUSE GAMER HYPERX PULSEFIRE HASTE, WIRELESS, RGB, 16000DPI, 6 BOTOES, PRETO ",
@@ -321,23 +309,23 @@ public class main {
 
         switch (menuOption) {
             case 1:
-                products = new String[peripherals.length];
-                products = peripherals;
+                products = new String[processing.length];
+                products = processing;
                 break;
             case 2:
-                products = new String[videoCard.length];
-                products = videoCard;
+                products = new String[storage.length];
+                products = storage;
                 break;
             case 3:
                 products = new String[alimentation.length];
                 products = alimentation;
             case 4:
-                products = new String[storage.length];
-                products = storage;
+                products = new String[videoCard.length];
+                products = videoCard;
                 break;
             case 5:
-                products = new String[processing.length];
-                products = processing;
+                products = new String[peripherals.length];
+                products = peripherals;
                 break;
             default:
                 System.out.println("Erro");
@@ -354,36 +342,32 @@ public class main {
         }
     }
 
-    public static void selectOption(String[] products, double[] productsPrice) {
+    public static int selectOption(String[] products, double[] productsPrice) {
 
         Scanner input = new Scanner(System.in);
 
         System.out.println("Selecione um produto: ");
         String selectProduct = input.next();
 
-        //Válida caso a opção seja existente
-        boolean validationOption = true;
-
-        //Verifica se há somente números
-        while (((selectProduct.matches("^\\d+$")) == false) || validationOption == false) {
+        // Verifica se há somente números e se a posição existe
+        while (((selectProduct.matches("^\\d+$")) == false) || selectProduct.intern() != "1" && selectProduct.intern() != "2" && selectProduct.intern() != "3"
+                && selectProduct.intern() != "4" && selectProduct.intern() != "5" && selectProduct.intern() != "6"
+                && selectProduct.intern() != "7" && selectProduct.intern() != "8" && selectProduct.intern() != "9"
+                && selectProduct.intern() != "10") {
+            
             System.err.println("Valor inválido!");
             System.err.println("Informe uma opção novamente: ");
             selectProduct = input.next();
-            
-            //Verifica se a opção existe
-            for (int i = 0; i < products.length; i++) {
-                //Converte a opção que o user selecionou para int
-                int selectProductToint = Integer.parseInt(selectProduct);
-
-                if (selectProductToint == i)
-                    validationOption = true;
-                else {
-                    validationOption = false;
-                }
-
-            }
         }
+        int selectProductToInt = Integer.parseInt(selectProduct);
 
+        return selectProductToInt - 1;
+    }
+
+
+    public static void showProductsSelected(String[] products, double[] productsPrice, int selectOptionSelected) {
+        System.out.println("\nProduto selecionado: " + products[selectOptionSelected]);
+        System.out.println("Preço: " + productsPrice[selectOptionSelected]);    
     }
 
     public static void main(String[] args) {
@@ -392,6 +376,7 @@ public class main {
         String[] products = products(menuOption);
         double[] productsPrice = productsPrice(menuOption);
         showProducts(products, productsPrice);
-        selectOption(products, productsPrice);
+        int selectOptionSelected = selectOption(products, productsPrice);
+        showProductsSelected(products,productsPrice,selectOptionSelected);
     }
 }
