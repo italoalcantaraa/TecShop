@@ -350,11 +350,12 @@ public class main {
         String selectProduct = input.next();
 
         // Verifica se há somente números e se a posição existe
-        while (((selectProduct.matches("^\\d+$")) == false) || selectProduct.intern() != "1" && selectProduct.intern() != "2" && selectProduct.intern() != "3"
+        while (((selectProduct.matches("^\\d+$")) == false) || selectProduct.intern() != "1"
+                && selectProduct.intern() != "2" && selectProduct.intern() != "3"
                 && selectProduct.intern() != "4" && selectProduct.intern() != "5" && selectProduct.intern() != "6"
                 && selectProduct.intern() != "7" && selectProduct.intern() != "8" && selectProduct.intern() != "9"
                 && selectProduct.intern() != "10") {
-            
+
             System.err.println("Valor inválido!");
             System.err.println("Informe uma opção novamente: ");
             selectProduct = input.next();
@@ -364,10 +365,9 @@ public class main {
         return selectProductToInt - 1;
     }
 
-
     public static void showProductsSelected(String[] products, double[] productsPrice, int selectOptionSelected) {
         System.out.println("\nProduto selecionado: " + products[selectOptionSelected]);
-        System.out.println("Preço: " + productsPrice[selectOptionSelected]);    
+        System.out.println("Preço: " + productsPrice[selectOptionSelected]);
     }
 
     public static void main(String[] args) {
@@ -377,6 +377,6 @@ public class main {
         double[] productsPrice = productsPrice(menuOption);
         showProducts(products, productsPrice);
         int selectOptionSelected = selectOption(products, productsPrice);
-        showProductsSelected(products,productsPrice,selectOptionSelected);
+        showProductsSelected(products, productsPrice, selectOptionSelected);
     }
 }
