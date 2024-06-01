@@ -3,12 +3,12 @@ package tests;
 import java.util.Scanner;
 
 public class coletaNum {
-    public static byte ColetaNumero() {
+    public static short ColetaNumero() {
         Scanner read = new Scanner(System.in);
-        byte numero;
+        short numero;
         while(true){
-            if(read.hasNextByte()){ //verifica se byte
-                numero = read.nextByte();
+            if(read.hasNextShort()){ //verifica se byte
+                numero = read.nextShort();
                 break;
             }
             else{
