@@ -116,29 +116,30 @@ public class main {
 
     switch (menuOption) {
         case 1:
-            processingPrice = new double[peripheralsPrice.length];
-            processingPrice = peripheralsPrice;
+            productsPrice = new double[peripheralsPrice.length];
+            productsPrice = peripheralsPrice;
             break;
 
             case 2:
-            processingPrice = new double[videoCardPrice.length];
-            processingPrice = videoCardPrice;
+            productsPrice = new double[videoCardPrice.length];
+            productsPrice = videoCardPrice;
             break;
             case 3:
-            processingPrice = new double[alimentationPrice.length];
-            processingPrice = alimentationPrice ;
+            productsPrice = new double[alimentationPrice.length];
+            productsPrice = alimentationPrice ;
             break;
             case 4:
-            processingPrice = new double[storagePrice.length];
-            processingPrice = storagePrice;
+            productsPrice = new double[storagePrice.length];
+            productsPrice = storagePrice;
             break;
             case 5:
-            processingPrice = new double[processingPrice.length];
-            processingPrice = processingPrice;
+            productsPrice  = new double[processingPrice.length];
+            productsPrice = processingPrice;
             break;
         default: System.out.println("Erro");
             break;
     }
+        
     return productsPrice;
     }
 
@@ -226,9 +227,12 @@ public class main {
     }
 
     public static void showProducts(String[] products, double[] productsPrice){
-        System.out.println(" ");
-    
+       System.out.println("\n-PRODUTOS-\n");
+        for(int i = 0; i < products.length; i ++){
+            System.out.println("\n" + products[i]);
+            System.out.println("Preço: " + productsPrice[i]);
     }
+}
 
     public static void main(String[] args) {
         String[] categorys = categorys();
