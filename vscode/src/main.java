@@ -395,6 +395,6 @@ public class main {
         showProducts(products, productsPrice);
         int selectOptionSelected = selectOption(products, productsPrice);
         showProductsSelected(products, productsPrice, selectOptionSelected);
-        continuePurchase();
+        boolean continuePurchase = continuePurchase();
     }
 }
