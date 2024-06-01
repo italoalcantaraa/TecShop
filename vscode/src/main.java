@@ -111,7 +111,7 @@ public class main {
         double[] alimentationPrice = new double[]{269.99, 279.99,299.99, 239.99,269.99,249.99,239.99,489.99,399.99,659.99};
         double[] storagePrice = new double[]{ 156.90, 395.99,319.99,99.00,174.99,178.42,239.99,199.99,224.10,179.99};
         double[] processingPrice = new double[]{159.99, 159.99, 159.99,159.99,159.99,159.99,159.99,159.99,129.99,300.00,569.99,229.99,529.99,594.99,1798.99,1149.99,2348.99};
-        
+
         double[] productsPrice = new double[]{};
 
     switch (menuOption) {
@@ -119,12 +119,27 @@ public class main {
             processingPrice = new double[peripheralsPrice.length];
             processingPrice = peripheralsPrice;
             break;
-            
-        default:
+
+            case 2:
+            processingPrice = new double[videoCardPrice.length];
+            processingPrice = videoCardPrice;
+            break;
+            case 3:
+            processingPrice = new double[alimentationPrice.length];
+            processingPrice = alimentationPrice ;
+            break;
+            case 4:
+            processingPrice = new double[storagePrice.length];
+            processingPrice = storagePrice;
+            break;
+            case 5:
+            processingPrice = new double[processingPrice.length];
+            processingPrice = processingPrice;
+            break;
+        default: System.out.println("Erro");
             break;
     }
-
-    return processingPrice;
+    return productsPrice;
     }
 
     public static String[] products(int menuOption){
@@ -184,14 +199,42 @@ public class main {
                             "Processador Intel Core i7-12700, Cache 25MB, 2.1GHz (4.9GHz Max Turbo)",
                             "PROCESSADOR Intel Core i7-10700F, 2.9GHZ (4.8GHZ Turbo), Cache 16MB, 8-CORE, 16-Threads,",
                             "Processador Intel Core i9-12900KF, 3.2GHz (5.2GHz Max Turbo), Cache 30MB, 16 Núcleos, 24 Threads"};
-                    
-        return peripherals;    
+        String[] products = new String[]{};
+        switch (menuOption){
+            case 1:
+            products = new String[peripherals.length];
+            products = peripherals;
+            break;
+            case 2:
+            products = new String[videoCard.length];
+            products = videoCard;
+            break;
+            case 3:
+            products = new String[alimentation.length];
+            products = alimentation;
+            case 4:
+            products = new String[storage.length];
+            products = storage;
+            break;
+            case 5:
+            products = new String[processing.length];
+            products = processing;
+            break;
+            default: System.out.println("Erro");
+        }        
+        return products;    
+    }
+
+    public static void showProducts(String[] products, double[] productsPrice){
+        System.out.println(" ");
+    
     }
 
     public static void main(String[] args) {
         String[] categorys = categorys();
-        int menuOption = menuOption(categorys);
-        products(menuOption);
-        productsPrice(menuOption);
+        int menuOption = menuOption(categorys); 
+        String[] products = products(menuOption);
+        double[] productsPrice = productsPrice(menuOption);
+        showProducts(products, productsPrice);
     }
 }
