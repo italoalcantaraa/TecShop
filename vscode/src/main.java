@@ -3,8 +3,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 import tests.coletaNum;
 
-public class main {
-
+public class main { 
     static Scanner input = new Scanner(System.in);
 
     public static String[] categorys() {
@@ -204,6 +203,26 @@ public class main {
 
     }
 
+    public static boolean continuePurchase() {
+        System.out.println("1 - Sim, desejo continuar comprando.");
+        System.out.println("2 - Não, quero continuar a compra.");
+        System.out.println("Deseja continuar comprando? ");
+        String yesOrNot =  input.next();
+
+        while (((yesOrNot.matches("^\\d+$")) == false) || yesOrNot.intern() != "1" && yesOrNot.intern() != "2") {
+            System.err.println("Valor inválido!");
+            System.out.println("Informe uma opção: ");
+            yesOrNot = input.next();
+        }
+
+        boolean continuePurchase = false;
+
+        if(yesOrNot.intern() == "1")
+            continuePurchase = true;
+        
+        return continuePurchase;
+    }
+
     public static double[] productsPrice(int menuOption) {
         double[] peripheralsPrice = new double[] { 129.99, 899.99, 429.99, 94.99, 299.99, 154.99, 129.99, 134.99,
                 129.99, 79.99 };
@@ -344,8 +363,6 @@ public class main {
 
     public static int selectOption(String[] products, double[] productsPrice) {
 
-        Scanner input = new Scanner(System.in);
-
         System.out.println("Selecione um produto: ");
         String selectProduct = input.next();
 
@@ -378,5 +395,6 @@ public class main {
         showProducts(products, productsPrice);
         int selectOptionSelected = selectOption(products, productsPrice);
         showProductsSelected(products, productsPrice, selectOptionSelected);
+        continuePurchase();
     }
 }
