@@ -5,20 +5,19 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.TemporalAdjusters;
 import java.util.Random;
-import java.util.Scanner;
+import tests.coletaNum;
 
 public class Pagamento {
-    static Scanner read = new Scanner(System.in);
 
     public static void Pagamento(double total){
     System.out.println("Qual a forma de pagamento que deseja escolher?\n");
     System.out.println("Opções: \n 1-Pix\n 2-Cartão\n 3-Boleto\n");
-    byte escolha = read.nextByte();
+    byte escolha = coletaNum.ColetaNumero();
     
     while(escolha != 1 & escolha != 2 & escolha != 3){
       System.out.println("Opção inválida, tente novamente");
       System.out.println("Opções: \n 1-Pix\n 2-Cartão\n 3-Boleto");
-      escolha = read.nextByte();
+      escolha = coletaNum.ColetaNumero();
     }
 
     switch(escolha){
@@ -37,12 +36,12 @@ public class Pagamento {
   public static void Pix(double total){
     //qrcode
     System.out.println("Qual das Opções: " + " 1-Qrcode" + " 2-Chave Pix" + " 3-Codigo\n");
-    byte escolha = read.nextByte();
+    byte escolha = coletaNum.ColetaNumero();
     
     while(escolha != 1 & escolha != 2 & escolha != 3){
       System.out.println("Opção inválida, tente novamente");
       System.out.println("Opções: \n 1-Pix\n 2-Cartão\n 3-Boleto");
-      escolha = read.nextByte();
+      escolha = coletaNum.ColetaNumero();
     }
     
     switch(escolha){
@@ -61,12 +60,12 @@ public class Pagamento {
   public static void Cartao(double total){
     System.out.println("Pagar com débito ou crédito?\n");
     System.out.println("Opções: 1-Débito 2-Credito\n");
-    byte escolha = read.nextByte();
+    byte escolha = coletaNum.ColetaNumero();
     
     while(escolha != 1 & escolha != 2){
       System.out.println("Opção inválida, tente novamente");
       System.out.println("Opções: \n 1-Débito\n 2-Credito\n");
-      escolha = read.nextByte();
+      escolha = coletaNum.ColetaNumero();
     }
 
     switch(escolha){
@@ -79,7 +78,7 @@ public class Pagamento {
       
         do{
           System.err.println("Em quantas vezes?\n");
-          vezes = read.nextByte();
+          vezes = coletaNum.ColetaNumero();
           if(vezes >= 0 & vezes <= 12){
             double valor = total/vezes;
             c = true;
