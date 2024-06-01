@@ -12,7 +12,7 @@ public class Pagamento {
     public static void Pagamento(double total){
     System.out.println("Qual a forma de pagamento que deseja escolher?\n");
     System.out.println("Opções: \n 1-Pix\n 2-Cartão\n 3-Boleto\n");
-    byte escolha = coletaNum.ColetaNumero();
+    short escolha = coletaNum.ColetaNumero();
     
     while(escolha != 1 & escolha != 2 & escolha != 3){
       System.out.println("Opção inválida, tente novamente");
@@ -36,7 +36,7 @@ public class Pagamento {
   public static void Pix(double total){
     //qrcode
     System.out.println("Qual das Opções: " + " 1-Qrcode" + " 2-Chave Pix" + " 3-Codigo\n");
-    byte escolha = coletaNum.ColetaNumero();
+    short escolha = coletaNum.ColetaNumero();
     
     while(escolha != 1 & escolha != 2 & escolha != 3){
       System.out.println("Opção inválida, tente novamente");
@@ -60,7 +60,7 @@ public class Pagamento {
   public static void Cartao(double total){
     System.out.println("Pagar com débito ou crédito?\n");
     System.out.println("Opções: 1-Débito 2-Credito\n");
-    byte escolha = coletaNum.ColetaNumero();
+    short escolha = coletaNum.ColetaNumero();
     
     while(escolha != 1 & escolha != 2){
       System.out.println("Opção inválida, tente novamente");
@@ -74,7 +74,7 @@ public class Pagamento {
       break;
       case 2:
         boolean c = false;
-        byte vezes;
+        short vezes;
       
         do{
           System.err.println("Em quantas vezes?\n");
