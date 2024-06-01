@@ -200,7 +200,9 @@ public class main {
                             "Processador Intel Core i7-12700, Cache 25MB, 2.1GHz (4.9GHz Max Turbo)",
                             "PROCESSADOR Intel Core i7-10700F, 2.9GHZ (4.8GHZ Turbo), Cache 16MB, 8-CORE, 16-Threads,",
                             "Processador Intel Core i9-12900KF, 3.2GHz (5.2GHz Max Turbo), Cache 30MB, 16 Núcleos, 24 Threads"};
+        
         String[] products = new String[]{};
+        
         switch (menuOption){
             case 1:
             products = new String[peripherals.length];
@@ -222,10 +224,12 @@ public class main {
             products = processing;
             break;
             default: System.out.println("Erro");
-        }        
+        }
+
         return products;    
     }
 
+    
     public static void showProducts(String[] products, double[] productsPrice){
        System.out.println("\n-PRODUTOS-\n");
         for(int i = 0; i < products.length; i ++){
