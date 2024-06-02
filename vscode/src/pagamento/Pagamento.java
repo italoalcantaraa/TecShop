@@ -6,10 +6,13 @@ import java.time.format.DateTimeFormatter;
 import java.time.temporal.TemporalAdjusters;
 import java.util.Random;
 import tests.coletaNum;
+import tests.coletaDados;
 
 public class Pagamento {
 
     public static void Pagamento(double total){
+    String[] dadosPessoais = coletaDados.billInformation();
+
     System.out.println("Qual a forma de pagamento que deseja escolher?\n");
     System.out.println("Opções: \n 1-Pix\n 2-Cartão\n 3-Boleto\n");
     short escolha = coletaNum.ColetaNumero();
@@ -22,18 +25,18 @@ public class Pagamento {
 
     switch(escolha){
       case 1:
-        Pix(total);
+        Pix(total, dadosPessoais);
         break;
       case 2:
-        Cartao(total);
+        Cartao(total, dadosPessoais);
         break;
       case 3:
-        Boleto(total);
+        Boleto(total, dadosPessoais);
         break;
     }
   }
 
-  public static void Pix(double total){
+  public static void Pix(double total, String[] dadosPessoais){
     //qrcode
     System.out.println("Qual das Opções: " + " 1-Qrcode" + " 2-Chave Pix" + " 3-Codigo\n");
     short escolha = coletaNum.ColetaNumero();
@@ -57,7 +60,7 @@ public class Pagamento {
     }
   }
 
-  public static void Cartao(double total){
+  public static void Cartao(double total, String[] dadosPessoais){
     System.out.println("Pagar com débito ou crédito?\n");
     System.out.println("Opções: 1-Débito 2-Credito\n");
     short escolha = coletaNum.ColetaNumero();
@@ -88,7 +91,7 @@ public class Pagamento {
     }
   }
 
-  public static void Boleto(double total) {
+  public static void Boleto(double total, String[] dadosPessoais) {
     Random random = new Random();
     StringBuilder numeroBoleto = new StringBuilder();
 
@@ -116,6 +119,10 @@ public class Pagamento {
     String DataMaximaF = dayMax.format(formatter);
     String DataemisoraF = data.format(formatter);
 
+    String [] dados = coletaDados.billInformation();
+
+
     System.out.println("Numero do Boleto: " + numeroBoleto + "\nData de emissao: " + DataemisoraF + " Data de vencimento: " + DataMaximaF + " Total a pagar: " + total);
+    System.out.println(dados[0]);
 }
 }
