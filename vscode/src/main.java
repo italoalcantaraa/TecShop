@@ -3,8 +3,12 @@ import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 import tests.coletaNum;
 
-public class main { 
+public class main {
     static Scanner input = new Scanner(System.in);
+
+    static String[] cartProducts = new String[50];
+    static double[] cartPrices = new double[50];
+    static int count = 0;
 
     public static String[] categorys() {
         String[] categorys = new String[5];
@@ -18,9 +22,14 @@ public class main {
         return categorys;
     }
 
+    public static void apresentation() {
+        if (count == 0) {
+            System.out.println("Olá, seja bem-vindo(a) a TecShop!\n");
+        }
+    }
+
     public static int menuOption(String[] categorys) {
 
-        System.out.println("Olá, seja bem-vindo(a) a TecShop!\n");
         for (int i = 0; i < 5; i++) {
             System.out.println((i + 1) + " - " + categorys[i]);
         }
@@ -199,15 +208,52 @@ public class main {
         return data;
     }
 
-    public static void cart() {
+    public static void cart(boolean continuePurchase, String[] products, double[] productsPrice,
+            int selectOptionSelected) {
 
+        if (continuePurchase == true) {
+            if (cartProducts[count] == null)
+                cartProducts[count] = products[selectOptionSelected];
+
+            if (cartPrices[count] == 0)
+                cartPrices[count] = productsPrice[selectOptionSelected];
+
+            count++;
+            System.out.println("\nCarrinho\n");
+
+            System.out.println("(" + count + ")\n");
+            for (int i = 0; i < cartProducts.length; i++) {
+                if (cartProducts[i] != null && cartPrices[i] != 0) {
+                    System.out.println("|" + cartProducts[i]);
+                    System.out.println("|Preço: " + cartPrices[i] + "\n");
+                }
+            }
+            main(null);
+        } else {
+            if (cartProducts[count] == null)
+                cartProducts[count] = products[selectOptionSelected];
+
+            if (cartPrices[count] == 0)
+                cartPrices[count] = productsPrice[selectOptionSelected];
+
+            count++;
+
+            System.out.println("(" + count + ")\n");
+            for (int i = 0; i < cartProducts.length; i++) {
+                if (cartProducts[i] != null && cartPrices[i] != 0) {
+                    System.out.println("|" + cartProducts[i]);
+                    System.out.println("|Preço: " + cartPrices[i] + "\n");
+                }
+            }
+            System.out.println("Continua...");
+        }
     }
 
     public static boolean continuePurchase() {
         System.out.println("1 - Sim, desejo continuar comprando.");
         System.out.println("2 - Não, quero continuar a compra.");
         System.out.println("Deseja continuar comprando? ");
-        String yesOrNot =  input.next();
+        String yesOrNot = input.next();
 
         while (((yesOrNot.matches("^\\d+$")) == false) || yesOrNot.intern() != "1" && yesOrNot.intern() != "2") {
             System.err.println("Valor inválido!");
@@ -217,9 +263,9 @@ public class main {
 
         boolean continuePurchase = false;
 
-        if(yesOrNot.intern() == "1")
+        if (yesOrNot.intern() == "1")
             continuePurchase = true;
-        
+
         return continuePurchase;
     }
 
@@ -356,7 +402,7 @@ public class main {
     public static void showProducts(String[] products, double[] productsPrice) {
         System.out.println("\n-PRODUTOS-\n");
         for (int i = 0; i < products.length; i++) {
-            System.out.println( "\n" + (i + 1) + " - " + products[i]);
+            System.out.println("\n" + (i + 1) + " - " + products[i]);
             System.out.println("Preço: " + productsPrice[i]);
         }
     }
@@ -387,7 +433,20 @@ public class main {
         System.out.println("Preço: " + productsPrice[selectOptionSelected]);
     }
 
+    public static double sumCart() {
+
+        double sumCart = 0;
+
+        for (int i = 0; i < cartPrices.length; i++) {
+            sumCart += cartPrices[i];
+        }
+
+        System.out.println("\nTotal: " + sumCart);
+        return sumCart;
+    }
+
     public static void main(String[] args) {
+        apresentation();
         String[] categorys = categorys();
         int menuOption = menuOption(categorys);
         String[] products = products(menuOption);
@@ -396,5 +455,7 @@ public class main {
         int selectOptionSelected = selectOption(products, productsPrice);
         showProductsSelected(products, productsPrice, selectOptionSelected);
         boolean continuePurchase = continuePurchase();
+        cart(continuePurchase, products, productsPrice, selectOptionSelected);
+        double sumCart = sumCart();
     }
 }
