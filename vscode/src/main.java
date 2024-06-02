@@ -1,7 +1,9 @@
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
-// import test.coletaNum; tá dando erro
+
+import tests.coletaDados;
+import tests.coletaNum;
 
 public class main {
     static Scanner input = new Scanner(System.in);
@@ -50,8 +52,6 @@ public class main {
         return menuOptionToInt;
     }
 
-   
-
     public static void cart(boolean continuePurchase, String[] products, double[] productsPrice,
             int selectOptionSelected) {
 
@@ -89,7 +89,6 @@ public class main {
                     System.out.println("|Preço: " + cartPrices[i] + "\n");
                 }
             }
-            System.out.println("Continua...");
         }
     }
 
@@ -285,10 +284,10 @@ public class main {
             sumCart += cartPrices[i];
         }
 
-        if(continuePurchase == false){
-            System.out.println("\nTotal: " + sumCart);
+        if (continuePurchase == false) {
+            System.out.println("\nTotal: " + sumCart + "\n");
         }
-        
+
         return sumCart;
     }
 
@@ -304,5 +303,8 @@ public class main {
         boolean continuePurchase = continuePurchase();
         cart(continuePurchase, products, productsPrice, selectOptionSelected);
         double sumCart = sumCart(continuePurchase);
+        //Falta finalizar
+        coletaDados coletetaDd = new coletaDados();
+        coletetaDd.billInformation();
     }
 }

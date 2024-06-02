@@ -15,7 +15,7 @@ public class coletaNum {
                 System.out.println("Entrada inválida. Tente novamente.");
                 read.next(); // Lê e descarta a entrada inválida
             }
-        }
+        }   
         return numero;
     }
 }
