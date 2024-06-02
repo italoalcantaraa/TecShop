@@ -1,7 +1,7 @@
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
-import test.coletaNum;
+// import test.coletaNum; tá dando erro
 
 public class main {
     static Scanner input = new Scanner(System.in);
@@ -277,7 +277,7 @@ public class main {
         System.out.println("Preço: " + productsPrice[selectOptionSelected]);
     }
 
-    public static double sumCart() {
+    public static double sumCart(boolean continuePurchase) {
 
         double sumCart = 0;
 
@@ -285,7 +285,10 @@ public class main {
             sumCart += cartPrices[i];
         }
 
-        System.out.println("\nTotal: " + sumCart);
+        if(continuePurchase == false){
+            System.out.println("\nTotal: " + sumCart);
+        }
+        
         return sumCart;
     }
 
@@ -300,6 +303,6 @@ public class main {
         showProductsSelected(products, productsPrice, selectOptionSelected);
         boolean continuePurchase = continuePurchase();
         cart(continuePurchase, products, productsPrice, selectOptionSelected);
-        double sumCart = sumCart();
+        double sumCart = sumCart(continuePurchase);
     }
 }
