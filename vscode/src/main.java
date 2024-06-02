@@ -2,6 +2,7 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 
+import pagamento.Pagamento;
 import tests.coletaDados;
 import tests.coletaNum;
 
@@ -303,8 +304,8 @@ public class main {
         boolean continuePurchase = continuePurchase();
         cart(continuePurchase, products, productsPrice, selectOptionSelected);
         double sumCart = sumCart(continuePurchase);
-        //Falta finalizar
-        coletaDados coletetaDd = new coletaDados();
-        coletetaDd.billInformation();
+        Pagamento pag = new Pagamento();
+        pag.Pagamento(sumCart);
+        
     }
 }
