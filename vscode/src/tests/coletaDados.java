@@ -110,10 +110,8 @@ public class coletaDados {
         LocalDate dataNascimento = LocalDate.of(anoNascimento, mesNascimento, diaNascimento);
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
         String teste = dataNascimento.format(formatter);
-        System.out.println(teste);
 
         data[6] = teste;
-        System.out.println(data[6]);
 
         System.out.printf("\nInforme seu CPF(xxx.xxx.xxx-xx): ");
         data[1] = input.nextLine();
