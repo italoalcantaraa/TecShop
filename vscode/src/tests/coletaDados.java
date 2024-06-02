@@ -127,7 +127,7 @@ public class coletaDados {
         System.out.printf("\nInforme seu logradouro(Nome da rua e N°): ");
         data[2] = input.nextLine();
 
-        while (data[2].matches("^[A-Z][a-zA-Z ]+ N°\\d{1,4}$") == false) {
+        while (data[2].matches("^[A-Z][a-zA-Z ]+\\s+\\d{1,4}$") == false) {
             System.err.printf("=-=-=-LOGRADOURO INVÁLIDO-=-=-=\n");
             System.out.printf("Insira seu Logradouro novamente: ");
             data[2] = input.nextLine();
